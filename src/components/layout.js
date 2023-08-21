@@ -1,8 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { FaBars } from "react-icons/fa"
 import { AiOutlineClose } from "react-icons/ai"
+import logo from '../assets/logo.png'
+import { useLocation, useNavigate } from "react-router-dom/dist";
+
 
 
 
@@ -18,20 +21,28 @@ const navigation = [
 ]
 
 const Layout = () => {
+    const navigate = useNavigate()
+    const location = useLocation()
+    const [currentUrl, setCurrentUrl] = useState('/')
+
+    useEffect(() => {
+        setCurrentUrl(location.pathname === '/' ? location.pathname : location.pathname.substring(1))
+    }, [location])
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
         <div className="bg-white">
-            <header className="absolute inset-x-0 top-0 z-50 sticky top-0">
-                <nav className="flex items-center bg-gray-100 justify-between p-6 lg:px-8" aria-label="Global">
-                    <div className="flex lg:flex-1">
-                        <a href="/" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
+            <header className="absolute inset-x-0 top-0 z-50 bg-[#f8fffb] sticky top-0">
+                <nav className="flex items-center justify-between lg:px-8">
+                    <div className="flex lg:flex-1 items-center">
+                        <a href="/">
+                            {/* <span className="sr-only">Your Company</span> */}
                             <img
-                                className="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                alt=""
+                                className="h-16 w-auto"
+                                src={logo}
+                                alt="logo"
                             />
                         </a>
+                        <span className="pl-2 font-bold leading-6 text-primary"> L'amour Nail Spa</span>
                     </div>
                     <div className="flex lg:hidden">
                         <button
@@ -42,26 +53,18 @@ const Layout = () => {
                             <FaBars className="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
-                    <div className="hidden lg:flex lg:gap-x-12">
+                    <div className="hidden lg:flex lg:gap-x-12 ">
                         {navigation.map((item) => (
-                            <Link key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-green-900">
+                            <button key={item.name} onClick={() => navigate(`${item.href}`)} className={`${item.href.includes(currentUrl) ? 'text-white bg-[#90B9A4]' : 'text-[#90B9A4]'} font-bold px-2 h-16 hover:underline`}>
                                 {item.name}
-                            </Link>
+                            </button>
                         ))}
                     </div>
                 </nav>
                 <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                     <div className="fixed inset-0 z-50" />
-                    <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-100 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                        <div className="flex items-center justify-between">
-                            <Link to="/" className="-m-1.5 p-1.5">
-                                <span className="sr-only">Your Company</span>
-                                <img
-                                    className="h-8 w-auto"
-                                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                    alt=""
-                                />
-                            </Link>
+                    <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-48 overflow-y-auto bg-[#f8fffb] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div className="flex items-center justify-end">
                             <button
                                 type="button"
                                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -78,7 +81,7 @@ const Layout = () => {
                                         <Link
                                             key={item.name}
                                             to={item.href}
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            className={`${item.href.includes(currentUrl) ? 'text-white bg-[#90B9A4]' : 'text-[#90B9A4]'} -mx-3 block rounded-lg px-3 py-2 font-semibold leading-7 text-black-900 hover:hover:underline`}
                                         >
                                             {item.name}
                                         </Link>
@@ -89,36 +92,15 @@ const Layout = () => {
                     </Dialog.Panel>
                 </Dialog>
             </header>
-            <div className="relative isolate overflow-hidden bg-green-500 py-24 sm:py-32">
+            <div className="relative isolate overflow-hidden py-24 sm:py-32 bg-gradient-to-t from-[#f8fffb] to-[#7bcaa2]">
                 <img
                     src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1907&q=80"
                     alt=""
-                    className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center opacity-20"
+                    className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center opacity-10"
                 />
-                <div
-                    className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
-                    aria-hidden="true"
-                >
-                    <div
-                        className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-                        style={{
-                            clipPath:
-                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                        }}
-                    />
-                </div>
-                <div
-                    className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
-                    aria-hidden="true"
-                >
-                    <div
-                        className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-                        style={{
-                            clipPath:
-                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                        }}
-                    />
-                </div> <Outlet /></div>
+                <Outlet />
+
+            </div>
 
         </div>
     )
