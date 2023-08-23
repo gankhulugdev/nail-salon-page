@@ -53,9 +53,9 @@ const Layout = () => {
                             <FaBars className="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
-                    <div className="hidden lg:flex lg:gap-x-12 ">
+                    <div className="hidden lg:flex ">
                         {navigation.map((item) => (
-                            <button key={item.name} onClick={() => navigate(`${item.href}`)} className={`${item.href.includes(currentUrl) ? 'text-white bg-[#90B9A4]' : 'text-[#90B9A4]'} font-bold px-2 h-16 hover:underline`}>
+                            <button key={item.name} onClick={() => navigate(`${item.href}`)} className={`${item.href.includes(currentUrl) ? 'text-white bg-[#90B9A4]' : 'text-[#90B9A4]'} font-bold w-24 h-16 hover:underline`}>
                                 {item.name}
                             </button>
                         ))}
@@ -92,7 +92,7 @@ const Layout = () => {
                     </Dialog.Panel>
                 </Dialog>
             </header>
-            <div className="relative isolate overflow-hidden py-24 sm:py-32 bg-gradient-to-t from-[#f8fffb] to-[#7bcaa2]">
+            <div className="relative isolate overflow-hidden py-24 sm:py-32 bg-gradient-to-t from-[#f8fffb] to-[#aaf683]">
                 <img
                     src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1907&q=80"
                     alt=""
