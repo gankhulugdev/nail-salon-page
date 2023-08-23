@@ -93,11 +93,11 @@ const Layout = () => {
                 </Dialog>
             </header>
             <div className="relative isolate overflow-hidden py-24 sm:py-32 bg-gradient-to-t from-[#f8fffb] to-[#aaf683]">
-                <img
+                {/* <img
                     src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1907&q=80"
                     alt=""
                     className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center opacity-10"
-                />
+                /> */}
                 <Outlet />
 
             </div>
