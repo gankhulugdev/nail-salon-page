@@ -3,6 +3,11 @@ import { useMediaQuery } from '@mantine/hooks';
 import { createStyles, Paper, Text, Title, useMantineTheme, rem } from '@mantine/core';
 import gelEx from '../assets/gel-extend.jpg'
 import chromNail from '../assets/chrome.jpg'
+import Chrome2 from '../assets/Chrome2.png'
+import dipManicure from '../assets/dipManicure.jpg'
+import softGel from '../assets/softGel.jpg'
+import dazzleDry from '../assets/dazzleDry.png'
+import noChip from '../assets/noChip.jpg'
 import funny from '../assets/funny.jpg'
 
 const useStyles = createStyles((theme) => ({
@@ -76,22 +81,30 @@ const data = [
     category: 'manicure',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1587729927069-ef3b7a5ab9b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80',
-    title: 'Nail design',
+    image: dipManicure,
+    title: 'Dipping Powder',
     category: 'manicure',
   },
   {
-    image:
-      'https://img.freepik.com/free-photo/pedicurist-master-makes-pedicure-woman-s-legs-spa-treatment-concept_186202-7772.jpg?w=900&t=st=1692563870~exp=1692564470~hmac=69c9a0892e9b22d6786a2c1579256bce164eb45a7ca29f1dcecbbb13ea2e08da',
-    title: 'Pedicure',
-    category: 'pedicure',
+    image: Chrome2,
+    title: 'Chrome',
+    category: 'manicure',
   },
-  // {
-  //   image: funny,
-  //   title: 'Funny-Bunny OPI',
-  //   category: 'manicure',
-  // },
+  {
+    image: dazzleDry,
+    title: 'Dazzle Dry Manicure',
+    category: 'Nail Polish',
+  },
+  {
+    image: softGel,
+    title: 'SoftGel Extension',
+    category: 'Manicure',
+  },
+  {
+    image: noChip,
+    title: 'No chip',
+    category: 'manicure',
+  },
 ];
 
 export default function CardsCarousel() {

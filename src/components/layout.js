@@ -14,9 +14,10 @@ const navigation = [
     { name: 'Services', href: 'service' },
     { name: 'About', href: 'about' },
     { name: 'Book Now', href: 'booking' },
+    { name: 'E-Gift Card', href: 'giftcard' },
     { name: 'Contact', href: 'contact' },
-    { name: 'Career', href: 'career' },
-    { name: 'Gift Card', href: 'giftcard' },
+    // { name: 'Career', href: 'career' },
+    
 
 ]
 

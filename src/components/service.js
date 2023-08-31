@@ -9,25 +9,44 @@ const features = [
         items: [
             {
                 name: "Regular Manicure",
-                price: '20$'
+                price: '$20.00'
             },
             {
-                name: "Dazzle Dry",
-                price: '25$'
+                name: "Dazzle Dry Manicure",
+                price: '$25.00'
             },
             {
                 name: "No-Chip Manicure",
-                price: '40$'
+                price: '$40.00'
             },
             {
-                name: "Gel Extension",
-                price: '60$'
+                name: "Gel Extension + Nochip",
+                price: '$60.00'
             },
             {
-                name: "Dipping Powder",
-                price: '55$'
+                name: "Dipping Powder Manicure",
+                price: '$55.00'
             },
-
+            {
+                name: "Kids Manicure",
+                price: '$13.00'
+            },
+            {
+                name: "Spa Manicure",
+                price: '$28.00'
+            },
+            {
+                name: "Nail Polish Change",
+                price: '$15.00'
+            },
+            {
+                name: "French Manicure (Basic)",
+                price: '$25.00'
+            },
+            {
+                name: "Removal ( Nochip, SoftGel,Dipping Powder)",
+                price: '+$10.00'
+            },
         ]
 
     },
@@ -37,51 +56,74 @@ const features = [
         items: [
             {
                 name: "Regular Pedicure",
-                price: '35$'
-            },
-            {
-                name: "Express Pedicure",
-                price: '25$'
-            },
-            {
-                name: "No-Chip Pedicure",
-                price: '50$'
-            },
-            {
-                name: "Deluxe Pedicure",
-                price: '45$'
+                price: '$35.00'
             },
             {
                 name: "Spa Pedicure",
-                price: '60$'
+                price: '$50.00'
             },
-
+            {
+                name: "No-Chip Pedicure",
+                price: '$50.00'
+            },
+            {
+                name: "Kids Pedicure",
+                price: '$25.00'
+            },
+            {
+                name: "Deluxe Pedicure",
+                price: '$65.00'
+            },
+            {
+                name: "Deluxe Pedicure + Nochip Pedicure",
+                price: '$85.00'
+            },
+            {
+                name: "Spa Pedicure + Nochip",
+                price: '$65.00'
+            },
+            {
+                name: "Polish Change for Toenail",
+                price: '$20.00'
+            },
+            {
+                name: "Paraffin",
+                price: '$10.00'
+            },
 
         ]
     },
     {
         sysName: 'combination',
-        name: 'Combination',
+        name: 'Combo Services',
         items: [
             {
                 name: "Regular Manicure & Regular Pedicure",
-                price: '55$'
+                price: '$50.00'
             },
             {
                 name: "No-Chip Manicure & Regular Pedicure",
-                price: '70$'
+                price: '$70.00'
             },
             {
-                name: "Regular Manicure and No Chip Pedicure",
-                price: '70$'
+                name: "Dazzle Dry Manicure and Pedicure",
+                price: '$70.00'
+            },
+            {
+                name: "No-Chip Manicure + No-Chip Pedicure",
+                price: '$85.00'
+            },
+            {
+                name: "Kids Manicure & Pedicure (under 10 y.o",
+                price: '$35.00'
             },
             {
                 name: "Dip Manicure & Regular Pedicure",
-                price: '90$'
+                price: '$95.00'
             },
             {
-                name: "Spa Pedicure and Regular Manicure",
-                price: '80$'
+                name: "Spa Pedicure and No-Chip Manicure",
+                price: '$80.00'
             },
 
 
