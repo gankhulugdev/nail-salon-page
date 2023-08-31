@@ -31,7 +31,7 @@ const Layout = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
         <div className="bg-white">
-            <header className="absolute inset-x-0 top-0 z-50 bg-[#f8fffb] sticky top-0">
+            <header className="absolute inset-x-0 top-0 z-50 bg-salonlight sticky top-0">
                 <nav className="flex items-center justify-between lg:px-8">
                     <div className="flex lg:flex-1 items-center">
                         <a href="/">
@@ -92,7 +92,7 @@ const Layout = () => {
                     </Dialog.Panel>
                 </Dialog>
             </header>
-            <div className="relative isolate overflow-hidden py-6 sm:py-8 bg-salonlight">
+            <div className="w-full overflow-hidden py-6 sm:py-8 ">
                 {/* <img
                     src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1907&q=80"
                     alt=""

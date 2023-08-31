@@ -11,3 +11,11 @@ body {
     font-family: salonFont;
     background-color: #F1F2F2;
 }
+
+#about{
+    background: url("assets/polish.png") no-repeat center center fixed; ;
+    /* height: 100%;
+    width: 100%; */
+    background-size: cover;
+
+}
