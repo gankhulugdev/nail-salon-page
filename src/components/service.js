@@ -1,6 +1,5 @@
 
-import { Button, Text, Collapse, Accordion } from '@mantine/core';
-import { useReducer } from 'react';
+import { Text, Accordion } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
 const features = [
@@ -105,31 +104,31 @@ const features = [
     },
 ]
 
-const ACTION = {
-    MANICURE: 'manicure',
-    PEDICURE: 'pedicure',
-    COMBINATION: 'combination',
-    PARTY: 'party'
-}
+// const ACTION = {
+//     MANICURE: 'manicure',
+//     PEDICURE: 'pedicure',
+//     COMBINATION: 'combination',
+//     PARTY: 'party'
+// }
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case ACTION.MANICURE:
-            return state.manicure ? { ...state, manicure: false } : { ...state, manicure: true };
-        case ACTION.PEDICURE:
-            return state.pedicure ? { ...state, pedicure: false } : { ...state, pedicure: true };
-        case ACTION.COMBINATION:
-            return state.combination ? { ...state, combination: false } : { ...state, combination: true };
-        case ACTION.PARTY:
-            return state.party ? { ...state, party: false } : { ...state, party: true };
-        default:
-            return state;
-    }
-};
+// const reducer = (state, action) => {
+//     switch (action.type) {
+//         case ACTION.MANICURE:
+//             return state.manicure ? { ...state, manicure: false } : { ...state, manicure: true };
+//         case ACTION.PEDICURE:
+//             return state.pedicure ? { ...state, pedicure: false } : { ...state, pedicure: true };
+//         case ACTION.COMBINATION:
+//             return state.combination ? { ...state, combination: false } : { ...state, combination: true };
+//         case ACTION.PARTY:
+//             return state.party ? { ...state, party: false } : { ...state, party: true };
+//         default:
+//             return state;
+//     }
+// };
 
 export default function Services() {
     // const [opened, { toggle }] = useDisclosure(false);
-    const [openedServicesIDs, updateOpenedServices] = useReducer(reducer, { manicure: false, pedicure: false, combination: false, party: false })
+    // const [openedServicesIDs, updateOpenedServices] = useReducer(reducer, { manicure: false, pedicure: false, combination: false, party: false })
     return (
         <div className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -144,12 +143,11 @@ export default function Services() {
                             <Accordion.Item key={feature.sysName} value={feature.sysName}>
                                 <Accordion.Control className='bg-green-500/30 rounded-lg' ><span className='font-bold text-green-700'>{feature.name}</span></Accordion.Control>
                                 <Accordion.Panel>
-                                    {feature.items?.map((service, idx) => {
-                                        return <div key={idx} className='flex justify-between'>
-                                            <Text>{service.name}</Text>
-                                            <Text>{service.price}</Text>
-                                        </div>
-                                    })}</Accordion.Panel>
+                                    {feature.items?.map((service, idx) => <div key={idx} className='flex justify-between'>
+                                        <Text>{service.name}</Text>
+                                        <Text>{service.price}</Text>
+                                    </div>
+                                    )}</Accordion.Panel>
                             </Accordion.Item>
 
                             // {/* <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/30">

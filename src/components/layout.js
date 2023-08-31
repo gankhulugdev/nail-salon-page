@@ -75,7 +75,7 @@ const Layout = () => {
                             </button>
                         </div>
                         <div className="mt-6 flow-root">
-                            <div className="-my-6 divide-y divide-gray-500/10">
+                            <div className="my-6">
                                 <div className="space-y-2 py-6">
                                     {navigation.map((item) => (
                                         <Link
@@ -92,7 +92,7 @@ const Layout = () => {
                     </Dialog.Panel>
                 </Dialog>
             </header>
-            <div className="relative isolate overflow-hidden py-24 sm:py-32 bg-gradient-to-t from-[#f8fffb] to-[#aaf683]">
+            <div className="relative isolate overflow-hidden py-6 sm:py-8 bg-salonlight">
                 {/* <img
                     src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1907&q=80"
                     alt=""

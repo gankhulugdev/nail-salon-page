@@ -1,6 +1,9 @@
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { createStyles, Paper, Text, Title, useMantineTheme, rem } from '@mantine/core';
+import gelEx from '../assets/gel-extend.jpg'
+import chromNail from '../assets/chrome.jpg'
+import funny from '../assets/funny.jpg'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -63,16 +66,14 @@ const data = [
     category: 'manicure',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1599948128020-9a44505b0d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80',
-    title: 'Opi regular polish',
+    image: gelEx,
+    title: 'Soft Gel Extension',
     category: 'manicure',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1616427592814-195c30c24ea3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80',
-    title: 'Polish',
-    category: 'polish',
+    image: chromNail,
+    title: 'Chrome',
+    category: 'manicure',
   },
   {
     image:
@@ -86,12 +87,11 @@ const data = [
     title: 'Pedicure',
     category: 'pedicure',
   },
-  {
-    image:
-      'https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
-    title: 'Active volcanos reviews: travel at your own risk',
-    category: 'nature',
-  },
+  // {
+  //   image: funny,
+  //   title: 'Funny-Bunny OPI',
+  //   category: 'manicure',
+  // },
 ];
 
 export default function CardsCarousel() {

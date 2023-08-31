@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: salonFont;
+    src: url(assets/font/CatchyMager-Normal.ttf);
+}
+
+body {
+    font-family: salonFont;
+    background-color: #F1F2F2;
+}
