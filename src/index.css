@@ -12,10 +12,105 @@ body {
     background-color: #F1F2F2;
 }
 
-#about{
-    background: url("assets/polish.png") no-repeat center center fixed; ;
+#about {
+
+
     /* height: 100%;
     width: 100%; */
-    background-size: cover;
 
+
+
+}
+
+#about::before {
+    content: "";
+    background: url("assets/polish.png") no-repeat center center fixed;
+    position: relative;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+}
+
+
+
+/* .Manicure {
+    background: URL('assets/hand-min.png');
+    background-size: cover;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+
+}
+
+.Pedicure {
+    background: URL('assets/dazzleDry.png');
+    background-size: cover;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+
+} */
+
+.servicebg {
+    /* box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box; */
+    background-size: 200% 200%;
+
+
+}
+
+.servicebg:hover {
+    -webkit-animation: AnimateBG 5s ease infinite;
+    animation: AnimateBG 3s ease infinite;
+
+}
+
+.servicebg {
+    background-image: linear-gradient(-45deg, #f1f2f2 0%, #f1f2f2 25%, #f1f2f2 51%, #40c5bcb8 100%);
+    background-position: 100% 50%;
+}
+
+/* .servicebg.Pedicure {
+    background-position: 100% 50%;
+    background-image: linear-gradient(-45deg, #f1f2f2 0%, #f1f2f2 25%, #f1f2f2 51%, #6d6875 100%);
+}
+
+.servicebg.Combo {
+    background-position: 100% 50%;
+    background-image: linear-gradient(-45deg, #f1f2f2 0%, #f1f2f2 25%, #f1f2f2 51%, #b180b6 100%);
+}
+
+.servicebg.Party {
+    background-position: 100% 50%;
+    background-image: linear-gradient(-45deg, #f1f2f2 0%, #f1f2f2 25%, #f1f2f2 51%, #34e5ff 100%);
+} */
+
+@-webkit-keyframes AnimateBG {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes AnimateBG {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }

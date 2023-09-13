@@ -1,6 +1,5 @@
 import { Carousel } from '@mantine/carousel';
-import { useMediaQuery } from '@mantine/hooks';
-import { createStyles, Paper, Text, Title, useMantineTheme, rem } from '@mantine/core';
+import { createStyles, Paper, Text, Title, rem, useMantineTheme } from '@mantine/core';
 import gelEx from '../assets/gel-extend.jpg'
 import chromNail from '../assets/chrome.jpg'
 import Chrome2 from '../assets/Chrome2.png'
@@ -8,7 +7,8 @@ import dipManicure from '../assets/dipManicure.jpg'
 import softGel from '../assets/softGel.jpg'
 import dazzleDry from '../assets/dazzleDry.png'
 import noChip from '../assets/noChip.jpg'
-import funny from '../assets/funny.jpg'
+import { useMediaQuery } from '@mantine/hooks';
+
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -108,8 +108,8 @@ const data = [
 ];
 
 export default function CardsCarousel() {
-  // const theme = useMantineTheme();
-  // const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = data.map((item) => (
     <Carousel.Slide key={item.title}>
       <Card {...item} />
@@ -117,14 +117,17 @@ export default function CardsCarousel() {
   ));
 
   return (
-    <Carousel
-      slideSize="50%"
-      breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
-      slideGap="xl"
-      align="start"
-      slidesToScroll={1}
-    >
-      {slides}
-    </Carousel>
+    <div className='drop-shadow-2xl'>
+      <Carousel
+        slideSize="50%"
+        breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
+        slideGap="xl"
+        align="start"
+        slidesToScroll={mobile ? 1 : 2}
+      >
+        {slides}
+      </Carousel>
+    </div>
+
   );
 }

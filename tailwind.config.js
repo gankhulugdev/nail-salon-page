@@ -4,9 +4,13 @@ module.exports = {
   theme: {
     colors: {
       salonlight: '#F1F2F2',
-      salongreen: ''
+      salongreen: '#5a9c6e'
     },
-    extend: {},
+    extend: {
+      boxShadow:{
+        "salon": "rgba(0, 0, 0, 0.04) 0px 5px 5px"
+      }
+    },
   },
   plugins: [],
 }

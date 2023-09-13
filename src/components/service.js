@@ -146,28 +146,6 @@ const features = [
     },
 ]
 
-// const ACTION = {
-//     MANICURE: 'manicure',
-//     PEDICURE: 'pedicure',
-//     COMBINATION: 'combination',
-//     PARTY: 'party'
-// }
-
-// const reducer = (state, action) => {
-//     switch (action.type) {
-//         case ACTION.MANICURE:
-//             return state.manicure ? { ...state, manicure: false } : { ...state, manicure: true };
-//         case ACTION.PEDICURE:
-//             return state.pedicure ? { ...state, pedicure: false } : { ...state, pedicure: true };
-//         case ACTION.COMBINATION:
-//             return state.combination ? { ...state, combination: false } : { ...state, combination: true };
-//         case ACTION.PARTY:
-//             return state.party ? { ...state, party: false } : { ...state, party: true };
-//         default:
-//             return state;
-//     }
-// };
-
 export default function Services() {
     // const [opened, { toggle }] = useDisclosure(false);
     // const [openedServicesIDs, updateOpenedServices] = useReducer(reducer, { manicure: false, pedicure: false, combination: false, party: false })
@@ -183,13 +161,19 @@ export default function Services() {
                     <Accordion className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16" multiple radius="lg" chevronPosition="right" transitionDuration={1000} >
                         {features.map((feature) => (
                             <Accordion.Item key={feature.sysName} value={feature.sysName}>
-                                <Accordion.Control className='bg-green-500/30 rounded-lg' ><span className='font-bold text-green-700'>{feature.name}</span></Accordion.Control>
-                                <Accordion.Panel>
-                                    {feature.items?.map((service, idx) => <div key={idx} className='flex justify-between'>
-                                        <Text>{service.name}</Text>
-                                        <Text>{service.price}</Text>
+                                <Accordion.Control className='bg-green-500/30 rounded-lg' >
+                                    <span className='font-bold text-green-700'>{feature.name}</span>
+                                </Accordion.Control>
+                                <Accordion.Panel >
+                                    <div className={`${feature.name} px-2 rounded servicebg`}>
+                                    {feature.items?.map((service, idx) => <div key={idx} className='flex justify-between relative'>
+                                        <div>{service.name}</div>
+                                        <div className='min-w-fit'>{service.price}</div>
                                     </div>
-                                    )}</Accordion.Panel>
+                                    )}
+                                        
+                                    </div>
+                                    </Accordion.Panel>
                             </Accordion.Item>
 
                             // {/* <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/30">
