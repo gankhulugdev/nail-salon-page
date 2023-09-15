@@ -5,6 +5,8 @@ import Home from "./components/home";
 import Career from "./components/career";
 import Services from "./components/service";
 import About from "./components/about";
+import Booking from "./components/booking";
+import GiftCard from "./components/gift-card";
 
 
 function App() {
@@ -15,10 +17,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="service" element={<Services />} />
           <Route path="about" element={<About />} />
-          <Route path="booking" element={<Contact />} />
+          <Route path="booking" element={<Booking />} />
 
           <Route path="contact" element={<Contact />} />
-          <Route path="giftcard" element={<Contact />} />
+          <Route path="giftcard" element={<GiftCard />} />
           <Route path="career" element={<Career />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>

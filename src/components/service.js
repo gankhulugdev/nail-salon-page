@@ -1,6 +1,6 @@
 
-import { Text, Accordion } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { Accordion } from '@mantine/core';
+import { Link, useLocation } from 'react-router-dom';
 
 const features = [
     {
@@ -147,8 +147,8 @@ const features = [
 ]
 
 export default function Services() {
-    // const [opened, { toggle }] = useDisclosure(false);
-    // const [openedServicesIDs, updateOpenedServices] = useReducer(reducer, { manicure: false, pedicure: false, combination: false, party: false })
+    const {state} = useLocation();
+    console.log(state)
     return (
         <div className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -158,7 +158,7 @@ export default function Services() {
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                    <Accordion className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16" multiple radius="lg" chevronPosition="right" transitionDuration={1000} >
+                    <Accordion defaultValue={state? state: null} className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16" multiple radius="lg" chevronPosition="right" transitionDuration={1000} >
                         {features.map((feature) => (
                             <Accordion.Item key={feature.sysName} value={feature.sysName}>
                                 <Accordion.Control className='bg-green-500/30 rounded-lg' >

@@ -6,7 +6,7 @@ export default function About() {
 
         <div className="mx-auto ">
 
-            <div className="mx-auto z-10  text-center">
+            <div className="mx-auto text-center">
                 <p className="pt-2 md:pt-6 lg:pt-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                     About Us
                 </p>

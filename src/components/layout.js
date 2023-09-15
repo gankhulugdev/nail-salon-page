@@ -43,7 +43,7 @@ const Layout = () => {
                                 alt="logo"
                             />
                         </a>
-                        <span className="pl-2 font-bold leading-6 text-primary"> L'amour Nail Spa</span>
+                        <span className="pl-2  leading-6 text-primary"> L'amour Nail Spa</span>
                     </div>
                     <div className="flex lg:hidden">
                         <button
@@ -56,7 +56,7 @@ const Layout = () => {
                     </div>
                     <div className="hidden lg:flex ">
                         {navigation.map((item) => (
-                            <button key={item.name} onClick={() => navigate(`${item.href}`)} className={`${item.href.includes(currentUrl) ? 'text-white bg-[#90B9A4]' : 'text-[#90B9A4]'} font-bold w-24 h-16 hover:underline`}>
+                            <button key={item.name} onClick={() => navigate(`${item.href}`)} className={`${item.href.includes(currentUrl) ? 'bg-[#90B9A4] font-bold' : ''} w-24 h-16 hover:underline`}>
                                 {item.name}
                             </button>
                         ))}
@@ -82,6 +82,7 @@ const Layout = () => {
                                         <Link
                                             key={item.name}
                                             to={item.href}
+                                            onClick={() => setMobileMenuOpen(false)}
                                             className={`${item.href.includes(currentUrl) ? 'text-white bg-[#90B9A4]' : 'text-[#90B9A4]'} -mx-3 block rounded-lg px-3 py-2 font-semibold leading-7 text-black-900 hover:hover:underline`}
                                         >
                                             {item.name}
@@ -93,7 +94,7 @@ const Layout = () => {
                     </Dialog.Panel>
                 </Dialog>
             </header>
-            <div className="w-full overflow-hidden ">
+            <div className="w-full overflow-hidden pb-72 sm:pb-48  ">
                 {/* <img
                     src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1907&q=80"
                     alt=""
@@ -137,7 +138,7 @@ const openingHours = [
 
 const Footer = () => {
 
-    return <div className="z-50 bg-salonlight flex items-center justify-center sticky bottom-0 shadow-salon">
+    return <div className="z-50 bg-salonlight flex items-center justify-center w-screen opacity-80 fixed bottom-0 shadow-salon">
         <div className="flex items-center justify-between lg:px-8 ">
             <div className="flex flex-wrap  items-center mx-8">
                 <div className="p-4 lg:px-8">

@@ -8,7 +8,7 @@ import softGel from '../assets/softGel.jpg'
 import dazzleDry from '../assets/dazzleDry.png'
 import noChip from '../assets/noChip.jpg'
 import { useMediaQuery } from '@mantine/hooks';
-
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -109,9 +109,10 @@ const data = [
 
 export default function CardsCarousel() {
   const theme = useMantineTheme();
+  const navigate = useNavigate()
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = data.map((item) => (
-    <Carousel.Slide key={item.title}>
+    <Carousel.Slide className='hover:cursor-pointer' onClick={()=>navigate('/service', {state: item.category})} key={item.title}>
       <Card {...item} />
     </Carousel.Slide>
   ));

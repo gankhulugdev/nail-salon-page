@@ -25,7 +25,6 @@ body {
 #about::before {
     content: "";
     background: url("assets/polish.png") no-repeat center center fixed;
-    position: relative;
     background-size: cover;
     position: absolute;
     top: 0px;
@@ -34,6 +33,64 @@ body {
     left: 0px;
     opacity: 0.3;
 }
+
+#book {
+    background: url("assets/hand-min.png") no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.7;
+}
+
+#book-button {
+    position: fixed;
+    top: 20%;
+    animation: shake 2s linear infinite;
+}
+
+@keyframes shake {
+
+    25% {
+        transform: scale(1.1)
+    }
+
+    50% {
+        transform: scale(1)
+    }
+
+    75% {
+        transform: scale(1.1)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+#gift-card {
+    background: url("assets/gift.jpg") no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.7;
+    filter: grayscale(0.3);
+}
+
+#gift-card-button {
+    position: fixed;
+    top: 20%;
+    animation: shake 2s linear infinite;
+}
+
 
 
 
@@ -113,4 +170,74 @@ body {
     100% {
         background-position: 100% 50%;
     }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.mar-t-1 {
+    margin-top: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.gift-card {
+    border-radius: 10px;
+    background: #fafafa;
+    width: 430px;
+    color: #3d3d3d;
+    font-family: sans-serif;
+    display: flex;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gift-card__image {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    flex: 1;
+    max-width: 150px;
+    background-size: cover;
+    background-image: url(https://cdn.shopify.com/s/files/1/2504/3282/files/annie-spratt-102799-unsplash.jpg?15904179471993750892);
+}
+
+.gift-card__content {
+    padding: 30px 20px;
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.gift-card__msg {
+    font-size: 10px;
+    display: block;
+    margin-top: 10px;
+}
+
+.gift-card__details {
+    margin-top: auto;
+    align-items: center;
+    line-height: 1;
+}
+
+.gift-card__code {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 10px 13px;
+    margin-top: 20px;
+    font-size: 20px;
+    border: 1px solid #e3e3e3;
+}
+
+.gift-card__amount {
+    font-size: 70px;
+}
+
+.gift-card__amount-remaining {
+    font-size: 14px;
+    margin-top: 7px;
 }
