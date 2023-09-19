@@ -1,8 +1,13 @@
 
 import CardsCarousel from './carousels';
+import { motion } from "framer-motion"
 
 export default function About() {
-    return <div id='about' className="px-2 sm:px-4 md:px-8 lg:px-16">
+    return <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        id='about' className="px-2 sm:px-4 md:px-8 lg:px-16">
 
         <div className="mx-auto ">
 
@@ -18,5 +23,5 @@ export default function About() {
             <CardsCarousel />
         </div>
 
-    </div>;
+    </motion.div>;
 }

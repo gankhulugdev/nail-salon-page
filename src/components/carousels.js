@@ -111,8 +111,8 @@ export default function CardsCarousel() {
   const theme = useMantineTheme();
   const navigate = useNavigate()
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  const slides = data.map((item) => (
-    <Carousel.Slide className='hover:cursor-pointer' onClick={()=>navigate('/service', {state: item.category})} key={item.title}>
+  const slides = data.map((item, id) => (
+    <Carousel.Slide className='hover:cursor-pointer' onClick={()=>navigate('/service', {state: item.category})} key={id}>
       <Card {...item} />
     </Carousel.Slide>
   ));
