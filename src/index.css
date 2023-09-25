@@ -10,7 +10,7 @@
 body {
     font-family: salonFont;
     background-color: #F1F2F2;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 #about {
