@@ -1,23 +1,34 @@
+import { FaPhone } from "react-icons/fa"
+import {FaLocationDot} from "react-icons/fa6"
+import {TfiEmail} from "react-icons/tfi"
+
+function linkToMap() {
+    window.open('https://maps.app.goo.gl/TzKypAJt669wnfyN7')
+}
+
 export default function Footer() {
 
-    return <div className="z-50 bg-salonlight flex items-center justify-center w-screen opacity-80 fixed bottom-0 shadow-salon">
+    return <div className="z-50 bg-salonlight flex items-center justify-center w-screen opacity-100 fixed bottom-0 shadow-salon">
         <div className="flex items-center justify-between lg:px-8 ">
             <div className="flex flex-wrap  items-center mx-8 w-full">
                 <div className="flex justify-between flex-wrap">
-                    <div className="p-4 lg:px-8">
-                        <span className="font-bold">Address:</span>
+                    <div onClick={linkToMap} className="p-4 lg:px-8 hover:cursor-pointer">
+                        <span className="hidden lg:inline-block font-bold">Address:</span>
+                        <FaLocationDot className="text-salongreen inline-block lg:hidden" />
                         <span className="pl-2">1101 W Touhy Ave, Park Ridge, IL 60068</span>
                     </div>
-                    <div className="p-4 lg:px-8">
-                        <span className="font-bold">Phone:</span>
-                        <span className="pl-2" >(224)-585-6125</span>
-                    </div>
+                    <a className="p-4 lg:px-8" href="tel:+12245856125">
+                        <span className="font-bold hidden lg:inline-block">Call:</span>
+                        <FaPhone className="text-salongreen inline-block lg:hidden" />
+                        <span className="px-2" >(224)-585-6125</span>
+                    </a>
                 </div>
                 <div className="flex justify-between flex-wrap">
-                    <div className="p-4 lg:px-8">
-                        <span className="font-bold">Email:</span>
+                    <a href="mailto:jessicana2424@gmail.com" className="p-4 lg:px-8">
+                        <span className="hidden lg:inline-block font-bold">Send Email:</span>
+                        <TfiEmail className="text-salongreen inline-block lg:hidden" />
                         <span className="pl-2">jessicana2424@gmail.com</span>
-                    </div>
+                    </a>
                     <div className="p-4 lg:px-8 flex justify-between items-center">
                         <span className="font-bold">Follow Us:</span>
                         <img className="h-[30px] px-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUElEQVR4nO2ZzUrDQBDH82S7Vby1JTsoPpAieFBv0qMP4UyEQq03L4KWWh/Am4eASXupYEeiWL9o6W5jdgPzgzku+f/2m00UCYIgBE3DYKwArxTgRANxFaUAJwqor+KkvVZ4beiwqtB6URk8cO557+HhU4Ja1gLFtAlI4NJewODYe3CYV24tEEBo/l4ioEvoxc2dhI86Q767TznLpzyb8Q+CHoGN7YSvb554GTpkgePOcGn44AUGo5RrLZCPX/4E3ju55a3di5Xaexd4/b1imd/XxartvQvYThktAvA/vb6I52wa3gjYMBil9RY47z7WW+D07CE8AdmFQEaAZAppOYlJdiGWbRTkNspyEuu6XSVUyU+L6wlgZi8A1C/7QudcBnv2AnHS9h4cPqoB2IxcKH4u+A6vgPadwn9JUKt4n6/yuV0V3zLYc+55QRCEqCreAAESa+zxbT1rAAAAAElFTkSuQmCC"></img>
@@ -25,10 +36,6 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
 }

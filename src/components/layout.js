@@ -29,7 +29,7 @@ const Layout = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
         <div className="bg-white">
-            <header className="z-50 bg-salonlight sticky top-0 shadow-salon w-screen">
+            <header className="z-50 bg-salonlight sticky top-0 shadow-salon">
                 <nav className="flex items-center justify-between lg:px-8">
                     <div className="flex lg:flex-1 items-center">
                         <a href="/">
@@ -70,7 +70,7 @@ const Layout = () => {
                     </div>}
                 </nav>
             </header>
-            <div className="w-full overflow-hidden pb-72 sm:pb-48  ">
+            <div className="w-full pt-4 overflow-hidden pb-72 sm:pb-48  ">
                 <Outlet />
 
             </div>

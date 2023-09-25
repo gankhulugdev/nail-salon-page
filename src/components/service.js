@@ -26,8 +26,8 @@ export default function Services() {
                                     <span className='font-bold text-green-700'>{feature.name}</span>
                                 </Accordion.Control>
                                 <Accordion.Panel >
-                                    <div className={`${feature.name} px-2 rounded servicebg`}>
-                                        {feature.items?.map((service, idx) => <div key={idx} className='flex justify-between relative'>
+                                    <div className={`${feature.name} px-2 py-2 lg:py-4 rounded servicebg`}>
+                                        {feature.items?.map((service, idx) => <div key={idx} className='flex justify-between relative py-1 lg:p-2'>
                                             <div className=''>{service.name}</div>
                                             <div className='min-w-fit font-bold text-salongreen'>{service.price}</div>
                                         </div>
