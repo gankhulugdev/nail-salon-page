@@ -13,7 +13,8 @@ module.exports = {
     },
     extend: {
       boxShadow:{
-        "salon": "rgba(0, 0, 0, 0.34) 0px 3px 5px"
+        "salon": "rgba(0, 0, 0, 0.34) 0px 3px 5px",
+        "review" : "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
       }
     },
   },

@@ -8,10 +8,8 @@ export default function Testimonials() {
     <section class="mb-32 text-center">
       <h2 class="mb-12 text-3xl font-bold">Testimonials</h2>
   
-      <div class="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
-       
+      <div class="flex flex-wrap justify-evenly">
        {freshaReview.map((review)=> <ReviewCard name={review.name} date={review.date} stars={review.stars} comment={review.comment} />)}
-       
       </div>
     </section>
   </div>
@@ -28,6 +26,12 @@ export default function Testimonials() {
 }
 
 const freshaReview = [
+    {
+        name: 'Linda R',
+        date: '25 May 2023',
+        stars: '5',
+        comment: 'Excellent, Friendly, Caring service. I highly recommend. Dahlia gave me a wonderful Mani/Pedi and really helped me navigate the step up/down to the pedi chair. I will definitely be back.'
+    },
     {
         name: "Linda C",
         date: "27 Aug 2023",
@@ -83,10 +87,5 @@ const freshaReview = [
         stars: '5',
         comment: 'I am always happy with my no-chip manicure and pedicure, great selection of nail polish colors, and excellent customer service.'
     },
-    {
-        name: 'Linda R',
-        date: '25 May 2023',
-        stars: '5',
-        comment: 'Excellent, Friendly, Caring service. I highly recommend. Dahlia gave me a wonderful Mani/Pedi and really helped me navigate the step up/down to the pedi chair. I will definitely be back.'
-    }
+   
 ]
