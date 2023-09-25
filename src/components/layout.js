@@ -5,6 +5,7 @@ import { AiOutlineClose } from "react-icons/ai"
 import logo from '../assets/logo.png'
 import { useLocation, useNavigate } from "react-router-dom/dist";
 import Footer from "./footer";
+import { motion, AnimatePresence } from "framer-motion"
 
 
 
@@ -58,16 +59,22 @@ const Layout = () => {
                             {mobileMenuOpen ? <AiOutlineClose className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
                         </button>
                     </div>
-                    {mobileMenuOpen && <div className="flex flex-col absolute right-0 top-16 bg-salonlight lg:hidden">
-                        {navigation.map((item) => (
-                            <button key={item.name} onClick={() => {
-                                navigate(`${item.href}`)
-                                setMobileMenuOpen(false)
+                    <AnimatePresence>
+                        {mobileMenuOpen && <motion.div initial={{ right: -192 }}
+                            animate={{ right: 0 }}
+                            exit={{ right: -192 }}
+                            transition={{ duration: 0.75, ease: "easeOut" }} className="flex flex-col absolute right-0 top-16 bg-salonlight lg:hidden">
+                            {navigation.map((item) => (
+                                <button key={item.name} onClick={() => {
+                                    navigate(`${item.href}`)
+                                    setMobileMenuOpen(false)
                                 }} className={`uppercase ${item.href.includes(currentUrl) ? 'bg-[#90B9A4] font-bold' : ''} w-48 h-16 hover:border-l-4 hover:border-grey transition ease-in-out duration-500`}>
-                                {item.name}
-                            </button>
-                        ))}
-                    </div>}
+                                    {item.name}
+                                </button>
+                            ))}
+                        </motion.div>}
+                    </AnimatePresence>
+
                 </nav>
             </header>
             <div className="w-full pt-4 overflow-hidden pb-72 sm:pb-48  ">
