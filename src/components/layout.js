@@ -7,18 +7,6 @@ import { useLocation, useNavigate } from "react-router-dom/dist";
 import Footer from "./footer";
 import { motion, AnimatePresence } from "framer-motion"
 
-
-
-
-const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: 'service' },
-    { name: 'About', href: 'about' },
-    { name: 'Book Now', href: 'booking' },
-    { name: 'E-Gift Card', href: 'giftcard' },
-    { name: 'Contact', href: 'contact' },
-]
-
 const Layout = () => {
     const navigate = useNavigate()
     const location = useLocation()
@@ -33,13 +21,13 @@ const Layout = () => {
             <header className="z-50 bg-salonlight sticky top-0 shadow-salon">
                 <nav className="flex items-center justify-between lg:px-8">
                     <div className="flex lg:flex-1 items-center">
-                        <a href="/">
+                        <Link to="/">
                             <img
                                 className="h-16 w-auto"
                                 src={logo}
                                 alt="logo"
                             />
-                        </a>
+                        </Link>
                         <span className="pl-2  leading-6 text-primary"> L'amour Nail Spa</span>
                     </div>
                     <div className="hidden lg:flex ">
@@ -60,35 +48,42 @@ const Layout = () => {
                         </button>
                     </div>
                     <AnimatePresence>
-                        {mobileMenuOpen && <motion.div initial={{ right: -192 }}
-                            animate={{ right: 0 }}
-                            exit={{ right: -192 }}
-                            transition={{ duration: 0.75, ease: "easeOut" }} className="flex flex-col absolute right-0 top-16 bg-salonlight lg:hidden">
+                        {mobileMenuOpen && <motion.div initial={{ right: 0, width: 0 }}
+                            animate={{ right: 0, width: 192 }}
+                            exit={{ right: 0, width: 0 }}
+                            transition={{ duration: 0.75, ease: "easeOut" }}
+                            className="flex flex-col z-40 fixed right-0 top-16 bg-salonlight lg:hidden">
                             {navigation.map((item) => (
                                 <button key={item.name} onClick={() => {
                                     navigate(`${item.href}`)
                                     setMobileMenuOpen(false)
-                                }} className={`uppercase ${item.href.includes(currentUrl) ? 'bg-[#90B9A4] font-bold' : ''} w-48 h-16 hover:border-l-4 hover:border-grey transition ease-in-out duration-500`}>
+                                }} className={`${item.href.includes(currentUrl) ?
+                                    'bg-[#90B9A4] font-bold border-l-4 border-grey' : ''} 
+                                    uppercase w-48 h-16 hover:border-l-4 transition ease-in-out duration-500`}>
                                     {item.name}
                                 </button>
                             ))}
                         </motion.div>}
                     </AnimatePresence>
-
                 </nav>
             </header>
-            <div className="w-full pt-4 overflow-hidden pb-72 sm:pb-48  ">
+            <div className="w-full pt-4 pb-72 sm:pb-48  ">
                 <Outlet />
-
             </div>
             <Footer />
-
-
         </div>
     )
 };
 export default Layout;
 
+const navigation = [
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: 'service' },
+    { name: 'About', href: 'about' },
+    { name: 'Book Now', href: 'booking' },
+    { name: 'E-Gift Card', href: 'giftcard' },
+    { name: 'Contact', href: 'contact' },
+]
 
 const openingHours = [
     {

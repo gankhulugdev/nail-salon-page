@@ -2,27 +2,15 @@ import ReviewCard from "./review-card"
 
 
 export default function Testimonials() {
+    return <div className="container my-24 mx-auto md:px-6">
+        <section className="mb-32 text-center">
+            <h2 className="mb-12 text-3xl font-bold">Testimonials</h2>
 
-
-    return <div class="container my-24 mx-auto md:px-6">
-    <section class="mb-32 text-center">
-      <h2 class="mb-12 text-3xl font-bold">Testimonials</h2>
-  
-      <div class="flex flex-wrap justify-evenly">
-       {freshaReview.map((review)=> <ReviewCard name={review.name} date={review.date} stars={review.stars} comment={review.comment} />)}
-      </div>
-    </section>
-  </div>
-    
-    
-    
-    // <div className="flex flex-wrap gap-y-10 justify-between">
-    //     {freshaReview.map((review) => <ReviewCard name={review.name} date={review.date} stars={review.stars} comment={review.comment} />
-
-    //     )}
-
-
-    // </div>
+            <div className="flex flex-wrap justify-evenly">
+                {freshaReview.map((review, idx) => <ReviewCard key={idx} name={review.name} date={review.date} stars={review.stars} comment={review.comment} />)}
+            </div>
+        </section>
+    </div>
 }
 
 const freshaReview = [
@@ -87,5 +75,5 @@ const freshaReview = [
         stars: '5',
         comment: 'I am always happy with my no-chip manicure and pedicure, great selection of nail polish colors, and excellent customer service.'
     },
-   
+
 ]

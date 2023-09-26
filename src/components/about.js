@@ -1,5 +1,3 @@
-
-import CardsCarousel from './carousels';
 import { motion } from "framer-motion"
 import Testimonials from './testimonials';
 

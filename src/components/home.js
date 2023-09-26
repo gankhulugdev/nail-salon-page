@@ -12,7 +12,7 @@ const Home = () => {
             <div className="mx-auto">
 
 
-                <img className="rounded-lg  mx-auto" src={photo} />
+                <img className="rounded-lg mx-auto" alt="welcome" src={photo} />
                 {/* <p className=" text-xl leading-8 text-gray-600">
            Oh La La Nails
         </p> */}

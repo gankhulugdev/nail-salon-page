@@ -1,10 +1,9 @@
 
 import { Accordion } from '@mantine/core';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
 
 export default function Services() {
-    const { state } = useLocation();
     return (
         <motion.div
             initial={{ opacity: 0 }}
