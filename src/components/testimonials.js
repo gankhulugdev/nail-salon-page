@@ -1,4 +1,5 @@
 import ReviewCard from "./review-card"
+import { Swiper } from "./swiper"
 
 
 export default function Testimonials() {
@@ -6,8 +7,9 @@ export default function Testimonials() {
         <section className="mb-32 text-center">
             <h2 className="mb-12 text-3xl font-bold">Testimonials</h2>
 
-            <div className="flex flex-wrap justify-evenly">
-                {freshaReview.map((review, idx) => <ReviewCard key={idx} name={review.name} date={review.date} stars={review.stars} comment={review.comment} />)}
+            <div className="flex relative justify-center items-center mx-auto  ">
+                <Swiper cards={freshaReview.map((review, idx) => <ReviewCard key={idx} name={review.name} date={review.date} stars={review.stars} comment={review.comment} />)} />
+
             </div>
         </section>
     </div>

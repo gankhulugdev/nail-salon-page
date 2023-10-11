@@ -2,7 +2,7 @@
 
 export default function ReviewCard({ name, comment }) {
 
-    return <div className="my-8 mx-8 py-8  md:mx-2 w-[250px] min-h-[250px] rounded-lg z-10 bg-white shadow-review">
+    return <div className="absolute top-[120px] left-[50%] -translate-y-1/2 -translate-x-1/2 my-8  py-8  w-[250px] min-h-[350px] rounded-lg z-1 bg-white shadow-review">
         <h5 className="mb-2 text-lg font-bold">{name}</h5>
         <p className="mb-4 px-4">
             {comment}
