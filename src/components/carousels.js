@@ -1,12 +1,6 @@
 import { Carousel } from '@mantine/carousel';
 import { createStyles, Paper, Text, Title, rem, useMantineTheme } from '@mantine/core';
-import gelEx from '../assets/gel-extend.jpg'
-import chromNail from '../assets/chrome.jpg'
-import Chrome2 from '../assets/Chrome2.png'
-import dipManicure from '../assets/dipManicure.jpg'
-import softGel from '../assets/softGel.jpg'
-import dazzleDry from '../assets/dazzleDry.png'
-import noChip from '../assets/noChip.jpg'
+
 import { useMediaQuery } from '@mantine/hooks';
 
 const useStyles = createStyles((theme) => ({
@@ -62,7 +56,7 @@ function Card({ image, title, category }) {
   );
 }
 
-export default function CardsCarousel() {
+export default function CardsCarousel({data}) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const slides = data.map((item, id) => (
@@ -87,46 +81,6 @@ export default function CardsCarousel() {
   );
 }
 
-const data = [
-  {
-    image:
-      'https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-    title: 'No chip lasts longer',
-    category: 'manicure',
-  },
-  {
-    image: gelEx,
-    title: 'Soft Gel Extension',
-    category: 'manicure',
-  },
-  {
-    image: chromNail,
-    title: 'Chrome',
-    category: 'manicure',
-  },
-  {
-    image: dipManicure,
-    title: 'Dipping Powder',
-    category: 'manicure',
-  },
-  {
-    image: Chrome2,
-    title: 'Chrome',
-    category: 'manicure',
-  },
-  {
-    image: dazzleDry,
-    title: 'Dazzle Dry Manicure',
-    category: 'Nail Polish',
-  },
-  {
-    image: softGel,
-    title: 'SoftGel Extension',
-    category: 'Manicure',
-  },
-  {
-    image: noChip,
-    title: 'No chip',
-    category: 'manicure',
-  },
-];
+
+
+

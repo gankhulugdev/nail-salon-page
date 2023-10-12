@@ -160,3 +160,7 @@ body {
 .prev {
   left: 10px;
 }
+
+#service-page {
+    background-image: url("/src//assets/service-page.jpg");
+}

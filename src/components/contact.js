@@ -1,5 +1,11 @@
+import { BackgroundImage, Center, Grid, Text } from "@mantine/core";
 import CardsCarousel from "./carousels";
 import { motion } from "framer-motion"
+import bgImage from "../assets/bg-green.jpg"
+import inside1 from "../assets/inside-1.jpg"
+import inside2 from "../assets/inside-2.jpg"
+import inside3 from "../assets/inside-3.jpg"
+import inside4 from "../assets/inside-4.jpg"
 
 const Contact = () => {
 
@@ -9,38 +15,87 @@ const Contact = () => {
         transition={{ duration: 0.75, ease: "easeOut" }}
         className="relative isolate px-6 lg:px-8">
 
-        <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14">
-
-            <div className="text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                    Data to enrich your online business
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                    fugiat veniam occaecat fugiat aliqua.
-                </p>
-
-            </div>
-        </div>
-        <div
-            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-            aria-hidden="true"
+        <BackgroundImage
+            src={bgImage}
+            radius="md"
         >
-            <div
-                className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-                style={{
-                    clipPath:
-                        'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                }}
-            />
-        </div>
+            <Center p="md">
+                <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14">
 
-        <CardsCarousel />
+                    <div className="text-center">
+                        <h1 className="my-8 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                            Open Hours
+                        </h1>
+
+                        <div className="mx-auto ">
+                            {openingHours.map((hour) => {
+                                return <Grid className="" columns={24}>
+                                    <Grid.Col className="font-bold" span={12}>{hour.day}</Grid.Col>
+                                    <Grid.Col className="font-bold" span={12}>{hour.hours}</Grid.Col>
+
+                                </Grid>
+                            })}
+                        </div>
+                    </div>
+                </div>
+
+            </Center>
+            <CardsCarousel data={imageContact} />
+        </BackgroundImage>
+
+
+
     </motion.div>;
 
 
 };
 
 
+const openingHours = [
+    {
+        day: 'Monday', hours: '9:00 - 22:00'
+    },
+    {
+        day: 'Tuesday', hours: '09:00 - 19:00'
+    },
+    {
+        day: 'Wednesday', hours: '09:00 - 19:00'
+    },
+    {
+        day: 'Thursday', hours: '09:00 - 19:00'
+    },
+    {
+        day: 'Friday', hours: '09:00 - 19:00'
+    },
+    {
+        day: 'Saturday', hours: '09:00 - 19:00'
+    },
+    {
+        day: 'Sunday', hours: '09:00 - 19:00'
+    }
+]
+
+const imageContact = [
+    {
+        image: inside1,
+        title: '',
+        category: '',
+    },
+    {
+        image: inside2,
+        title: '',
+        category: '',
+    },
+    {
+        image: inside3,
+        title: '',
+        category: '',
+    },
+    {
+        image: inside4,
+        title: '',
+        category: '',
+    },
+]
 
 export default Contact;

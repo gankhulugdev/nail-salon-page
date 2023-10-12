@@ -1,6 +1,13 @@
 import CardsCarousel from "./carousels";
 import photo from '../assets/home.png'
 import { motion } from 'framer-motion'
+import gelEx from '../assets/gel-extend.jpg'
+import chromNail from '../assets/chrome.jpg'
+import Chrome2 from '../assets/Chrome2.png'
+import dipManicure from '../assets/dipManicure.jpg'
+import softGel from '../assets/softGel.jpg'
+import dazzleDry from '../assets/dazzleDry.png'
+import noChip from '../assets/noChip.jpg'
 
 const Home = () => {
     return <motion.div
@@ -17,7 +24,7 @@ const Home = () => {
            Oh La La Nails
         </p> */}
 
-                <CardsCarousel />
+                <CardsCarousel data={data} />
             </div>
 
 
@@ -27,3 +34,47 @@ const Home = () => {
 };
 
 export default Home;
+
+const data = [
+    {
+      image:
+        'https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      title: 'No chip lasts longer',
+      category: 'manicure',
+    },
+    {
+      image: gelEx,
+      title: 'Soft Gel Extension',
+      category: 'manicure',
+    },
+    {
+      image: chromNail,
+      title: 'Chrome',
+      category: 'manicure',
+    },
+    {
+      image: dipManicure,
+      title: 'Dipping Powder',
+      category: 'manicure',
+    },
+    {
+      image: Chrome2,
+      title: 'Chrome',
+      category: 'manicure',
+    },
+    {
+      image: dazzleDry,
+      title: 'Dazzle Dry Manicure',
+      category: 'Nail Polish',
+    },
+    {
+      image: softGel,
+      title: 'SoftGel Extension',
+      category: 'Manicure',
+    },
+    {
+      image: noChip,
+      title: 'No chip',
+      category: 'manicure',
+    },
+  ];
