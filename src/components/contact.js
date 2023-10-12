@@ -53,25 +53,25 @@ const Contact = () => {
 
 const openingHours = [
     {
-        day: 'Monday', hours: '9:00 - 22:00'
+        day: 'Monday', hours: '9:00 AM - 7:00 PM'
     },
     {
-        day: 'Tuesday', hours: '09:00 - 19:00'
+        day: 'Tuesday', hours: '9:00 AM - 7:00 PM'
     },
     {
-        day: 'Wednesday', hours: '09:00 - 19:00'
+        day: 'Wednesday', hours: '9:00 AM - 7:00 PM'
     },
     {
-        day: 'Thursday', hours: '09:00 - 19:00'
+        day: 'Thursday', hours: '9:00 AM - 7:00 PM'
     },
     {
-        day: 'Friday', hours: '09:00 - 19:00'
+        day: 'Friday', hours: '9:00 AM - 7:00 PM'
     },
     {
-        day: 'Saturday', hours: '09:00 - 19:00'
+        day: 'Saturday', hours: '9:00 AM - 6:00 PM'
     },
     {
-        day: 'Sunday', hours: '09:00 - 19:00'
+        day: 'Sunday', hours: '10:00 AM - 6:00 PM'
     }
 ]
 
