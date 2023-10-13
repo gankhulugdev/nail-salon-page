@@ -19,7 +19,7 @@ const Contact = () => {
             src={bgImage}
             radius="md"
         >
-            <Center p="md">
+            <Center p="xs">
                 <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14">
 
                     <div className="text-center">
@@ -27,11 +27,11 @@ const Contact = () => {
                             Open Hours
                         </h1>
 
-                        <div className="mx-auto ">
+                        <div>
                             {openingHours.map((hour) => {
                                 return <Grid className="" columns={24}>
-                                    <Grid.Col className="font-bold" span={12}>{hour.day}</Grid.Col>
-                                    <Grid.Col className="font-bold" span={12}>{hour.hours}</Grid.Col>
+                                    <Grid.Col className="font-bold" span={8}>{hour.day}</Grid.Col>
+                                    <Grid.Col className="font-bold" span={16}>{hour.hours}</Grid.Col>
 
                                 </Grid>
                             })}
