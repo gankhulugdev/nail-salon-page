@@ -23,7 +23,7 @@ const Layout = () => {
                     <div className="flex lg:flex-1 items-center">
                         <Link to="/">
                             <img
-                                className="h-16 w-auto"
+                                className="h-16 w-auto rounded-full"
                                 src={logo}
                                 alt="logo"
                             />
@@ -67,9 +67,9 @@ const Layout = () => {
                     </AnimatePresence>
                 </nav>
             </header>
-            <div className="w-full pt-4 pb-72 sm:pb-48  ">
+            <div className="w-full pt-4 max-[364px]:pb-48 max-[436px]:pb-40 max-[500px]:pb-32 max-[640px]:pb-24 max-[904px]:pb-28 max-[1023px]:pb-16 lg:pb-36 min-[1280px]:pb-20 ">
                 <Outlet />
-            </div>
+            </div> 
             <Footer />
         </div>
     )

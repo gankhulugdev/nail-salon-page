@@ -9,7 +9,7 @@ import { AiOutlineLeftCircle, AiOutlineRightCircle } from "react-icons/ai";
 const variants = {
   enter: (direction) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? '1000' : '-1000',
       opacity: 0
     };
   },
@@ -21,7 +21,7 @@ const variants = {
   exit: (direction) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? '1000' : '-1000',
       opacity: 0
     };
   }
@@ -45,16 +45,15 @@ export const Swiper = ({cards}) => {
     <>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-        className="h-[200px]"
+        className="h-[200px] absolute"
           key={page}
-          // src={cards[cardIndex]}
           custom={direction}
           variants={variants}
           initial="enter"
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 25 },
+            x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
           }}
           drag="x"

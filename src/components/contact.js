@@ -13,11 +13,13 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: "easeOut" }}
+
         className="relative isolate px-6 lg:px-8">
 
         <BackgroundImage
             src={bgImage}
             radius="md"
+            className="min-h-[700px]"
         >
             <Center p="xs">
                 <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:py-14">

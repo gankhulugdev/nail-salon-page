@@ -1,7 +1,8 @@
 
-import { Accordion } from '@mantine/core';
+import { Accordion, BackgroundImage } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
+import bgImg from "../assets/service-page.jpg"
 
 export default function Services() {
     return (
@@ -10,47 +11,45 @@ export default function Services() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
 
-            className="py-24 sm:py-32 bg-salonlight">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:text-center">
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        Our Services
-                    </p>
-                </div>
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                    <Accordion multiple radius="lg" chevronPosition="right" transitionDuration={1000}
-                        className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16" >
-                        {features.map((feature) => (
-                            <Accordion.Item key={feature.sysName} value={feature.sysName}>
-                                <Accordion.Control className='bg-green-500/30 rounded-lg' >
-                                    <span className='font-bold text-green-700'>{feature.name}</span>
-                                </Accordion.Control>
-                                <Accordion.Panel >
-                                    <div className={`${feature.name} px-2 py-2 lg:py-4 rounded servicebg`}>
-                                        {feature.items?.map((service, idx) => <div key={idx} className='flex justify-between relative py-1 lg:p-2'>
-                                            <div className=''>{service.name}</div>
-                                            <div className='min-w-fit font-bold text-salongreen'>{service.price}</div>
+            className="relative isolate px-6 lg:px-8">
+            <BackgroundImage
+                src={bgImg}
+                radius="md"
+                className='min-h-[700px]'
+
+            >
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div className="mx-auto max-w-2xl lg:text-center">
+                        <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            Our Services
+                        </p>
+                    </div>
+                    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                        <Accordion multiple radius="lg" chevronPosition="right" transitionDuration={1000}
+                            className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16" >
+                            {features.map((feature) => (
+                                <Accordion.Item key={feature.sysName} value={feature.sysName}>
+                                    <Accordion.Control className='bg-salongreen rounded-lg' >
+                                        <span className='font-bold text-white'>{feature.name}</span>
+                                    </Accordion.Control>
+                                    <Accordion.Panel >
+                                        <div className={`${feature.name} px-2 py-2 lg:py-4 rounded servicebg`}>
+                                            {feature.items?.map((service, idx) => <div key={idx} className='flex justify-between relative py-1 lg:p-2'>
+                                                <div className=''>{service.name}</div>
+                                                <div className='min-w-fit font-bold text-salongreen'>{service.price}</div>
+                                            </div>
+                                            )}
+
                                         </div>
-                                        )}
+                                    </Accordion.Panel>
+                                </Accordion.Item>
+                            ))}
+                        </Accordion>
 
-                                    </div>
-                                </Accordion.Panel>
-                            </Accordion.Item>
-
-                            // {/* <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/30">
-                            //     </div> */}
-                            // {/* <Button color="teal" onClick={() => updateOpenedServices({ type: feature.sysName })}>
-                            //     {feature.name}</Button>
-                            // <Collapse in={openedServicesIDs[feature.sysName]} transitionDuration={500} transitionTimingFunction="linear">
-                            //     <Text>{feature.description}</Text>
-                            // </Collapse> */}
-
-
-                        ))}
-                    </Accordion>
-
+                    </div>
                 </div>
-            </div>
+            </BackgroundImage>
+
         </motion.div >
     )
 }

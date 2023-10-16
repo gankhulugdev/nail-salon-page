@@ -2,9 +2,9 @@
 
 export default function ReviewCard({ name, comment }) {
 
-    return <div className="absolute top-[120px] left-[50%] -translate-y-1/2 -translate-x-1/2 my-8  py-8  w-[250px] min-h-[350px] rounded-lg z-1 bg-white shadow-review">
+    return <div className="absolute top-[200px] left-[50%] -translate-y-1/2 -translate-x-1/2 my-8  py-8 w-[250px]  rounded-lg z-1 bg-white shadow-review">
         <h5 className="mb-2 text-lg font-bold">{name}</h5>
-        <p className="mb-4 px-4">
+        <p className="mb-4 px-4 min-h-[150px]">
             {comment}
         </p>
         <ul className=" flex justify-center">

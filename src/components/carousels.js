@@ -68,6 +68,7 @@ export default function CardsCarousel({data}) {
   return (
     <div className='drop-shadow-2xl'>
       <Carousel
+      withIndicators
         slideSize="50%"
         breakpoints={[{ maxWidth: 'sm', slideSize: '100%', slideGap: rem(2) }]}
         slideGap="xl"
