@@ -14,7 +14,7 @@ const Contact = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: "easeOut" }}
 
-        className="relative isolate px-6 lg:px-8">
+        className="relative isolate">
 
         <BackgroundImage
             src={bgImage}

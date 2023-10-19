@@ -8,7 +8,7 @@ export default function Booking() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: "easeOut" }}
-        id='book' className="px-2 sm:px-4 md:px-8 lg:px-16 flex justify-center  ">
+        id='book' className="flex justify-center  ">
 
 
         <div id="book-button">

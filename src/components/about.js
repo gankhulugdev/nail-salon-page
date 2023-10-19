@@ -9,10 +9,9 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            id='' className="relative isolate px-6 lg:px-8">
+            className="relative isolate">
              <BackgroundImage
                 src={bgImg}
-                radius="md"
                 className='min-h-[800px]'
             >
                 <div className="mx-auto text-center">

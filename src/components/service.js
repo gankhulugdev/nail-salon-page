@@ -11,12 +11,10 @@ export default function Services() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
 
-            className="relative isolate px-6 lg:px-8">
+            className="relative isolate">
             <BackgroundImage
                 src={bgImg}
-                radius="md"
                 className='min-h-[700px]'
-
             >
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:text-center">
@@ -29,7 +27,7 @@ export default function Services() {
                             className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16" >
                             {features.map((feature) => (
                                 <Accordion.Item key={feature.sysName} value={feature.sysName}>
-                                    <Accordion.Control className='bg-salongreen rounded-lg' >
+                                    <Accordion.Control className='bg-salongreen rounded-lg hover:bg-salongreen/95' >
                                         <span className='font-bold text-white'>{feature.name}</span>
                                     </Accordion.Control>
                                     <Accordion.Panel >
