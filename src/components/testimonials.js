@@ -3,7 +3,7 @@ import { Swiper } from "./swiper"
 
 
 export default function Testimonials() {
-    return <div className="container my-24 mx-auto md:px-6 min-h-[300px]">
+    return <div className="container mt-4 md:mt-12 mx-auto md:px-6 min-h-[300px]">
         <section className="mb-32 text-center">
             <h2 className="mb-12 text-3xl font-bold">Testimonials</h2>
 

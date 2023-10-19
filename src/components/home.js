@@ -17,12 +17,15 @@ const Home = () => {
     transition={{ duration: 0.75, ease: "easeOut" }}
 
     className="relative isolate px-6 lg:px-8">
-    <BackgroundImage
+
+      <img className="rounded-lg mx-auto" alt="welcome" src={photo} />
+
+    {/* <BackgroundImage
       src={photo}
       radius="md"
       className='min-h-[700px]'
     >
-    </BackgroundImage>
+    </BackgroundImage> */}
 
     <CardsCarousel data={data} />
 
